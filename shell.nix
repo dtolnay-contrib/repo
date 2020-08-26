@@ -4,8 +4,10 @@ let
     pkgs = import sources.nixpkgs {};
 in
 pkgs.mkShell {
-  buildInputs = [
+  buildInputs = with pkgs; [
     rust
+    openssl
+    pkg-config
 
     # keep this line if you use bash
     pkgs.bashInteractive
